@@ -4,6 +4,7 @@
   yum: name=ffmpeg state=absent
 
 - name: Install dependencies
+  become: yes
   yum: name={{ item }} state=present
   with_items:
     - autoconf
