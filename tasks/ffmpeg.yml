@@ -6,6 +6,7 @@
        depth=1
 
 - name: Compile | ffmpeg
+  become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
     chdir: "{{ source_dir }}/ffmpeg"
@@ -18,4 +19,5 @@
     - hash -r
 
 - name: Symlink | ffmpeg
+  become: yes
   file: state=link src=/usr/local/bin/ffmpeg dest=/usr/bin/ffmpeg
