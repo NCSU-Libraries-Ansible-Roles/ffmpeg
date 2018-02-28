@@ -1,6 +1,6 @@
 ---
 - name: GIT clone | ffmpeg
-  git: repo=git://source.ffmpeg.org/ffmpeg.git
+  git: repo=https://git.ffmpeg.org/ffmpeg.git
        dest={{ source_dir }}/ffmpeg
        accept_hostkey=yes
        depth=1
