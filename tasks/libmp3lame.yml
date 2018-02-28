@@ -4,6 +4,7 @@
 
 - name: libmp3lame | Unarchive
   unarchive:
+    remote_src: yes
     src: http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
     dest: "{{ source_dir }}"
     copy: no
