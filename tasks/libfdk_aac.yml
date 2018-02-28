@@ -1,7 +1,7 @@
 ---
 # AAC audio encoder
 - name: GIT clone | libfdk_aac
-  git: repo=git://git.code.sf.net/p/opencore-amr/fdk-aac
+  git: repo=https://github.com/mstorsjo/fdk-aac.git
        dest={{ source_dir }}/libfdk_aac
        accept_hostkey=yes
        depth=1
