@@ -7,6 +7,7 @@
        depth=1
 
 - name: Compile | libfdk_aac
+  become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
     chdir: "{{ source_dir }}/libfdk_aac"

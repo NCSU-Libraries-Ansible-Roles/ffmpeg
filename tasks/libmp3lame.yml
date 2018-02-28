@@ -9,6 +9,7 @@
     copy: no
 
 - name: Compile | libmp3lame
+  become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
     chdir: "{{ source_dir }}/lame-3.99.5"
