@@ -20,3 +20,4 @@
     - nasm
     - pkgconfig
     - zlib-devel
+    - unzip
