@@ -12,8 +12,8 @@
   become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
-    chdir: "{{ source_dir }}/lame-3.99.5"
-    creates: "{{ bin_dir }}/lame-3.99.5"
+    chdir: "{{ source_dir }}/lame-3.100/"
+    creates: "{{ bin_dir }}/lame-3.100/"
   with_items:
     - ./configure --prefix={{ build_dir }} --bindir={{ bin_dir }} --disable-shared --enable-nasm
     - make
