@@ -8,7 +8,7 @@
   become: yes
   template:
     src: nasm.repo
-    dest: /etc/yum/yum.repos.d/nasm.repo
+    dest: /etc/yum.repos.d/nasm.repo
 
 - name: Install dependencies
   become: yes
