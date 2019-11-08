@@ -1,7 +1,7 @@
 ---
 # H.264 video encoder
 - name: GIT clone | libx264
-  git: repo=git://git.videolan.org/x264
+  git: repo=git://code.videolan.org/videolan/x264
        dest={{ source_dir }}/x264
        accept_hostkey=yes
        depth=1

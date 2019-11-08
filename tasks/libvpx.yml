@@ -10,10 +10,10 @@
   become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
-    chdir: "{{ source_dir }}/libvpx"
     creates: "{{ bin_dir }}/libvpx"
+    chdir: "{{ source_dir }}/libvpx"    
   with_items:
-    - ./configure --prefix={{ build_dir }} --disable-examples
+    - ./configure --prefix={{ build_dir }} --disable-examples --disable-unit-tests --enable-vp9-highbitdepth
     - make
     - make install
     - make distclean

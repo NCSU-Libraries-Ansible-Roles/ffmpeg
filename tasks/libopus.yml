@@ -1,11 +1,9 @@
 ---
-# Opus audio decoder and encoder
-# 2016-05-21 Changed from using git:// URI to using HTTP
-- name: GIT clone | libopus
-  git: repo=http://git.opus-codec.org/opus.git
-       dest={{ source_dir }}/libopus
-      #  depth=1
-      #  accept_hostkey=yes
+- name: libopus | Unarchive
+  unarchive:
+    src: https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
+    dest: "{{ source_dir }}"
+    copy: no
 
 - name: Compile | libopus
   become: yes
@@ -14,7 +12,6 @@
     chdir: "{{ source_dir }}/libopus"
     creates: "{{ bin_dir }}/libopus"
   with_items:
-    - autoreconf -fiv
     - ./configure --prefix={{ build_dir }} --disable-shared
     - make
     - make install
