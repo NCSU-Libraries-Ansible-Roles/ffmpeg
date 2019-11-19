@@ -13,7 +13,7 @@
     creates: "{{ bin_dir }}/libvpx"
     chdir: "{{ source_dir }}/libvpx"    
   with_items:
-    - ./configure --prefix={{ build_dir }} --disable-examples --disable-unit-tests --enable-vp9-highbitdepth
+    - ./configure --prefix={{ build_dir }} --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
     - make
     - make install
     - make distclean
