@@ -9,6 +9,13 @@
     - "{{ source_dir }}"
     - "{{ build_dir }}"
 
+- name: stat nasm
+  stat: path=/usr/local/bin/nasm
+  register: nasm_stat
+- name: include nasm
+  import_tasks: nasm.yml
+  when: nasm_stat.stat.xusr is not defined or nasm_stat.stat.xusr == False
+
 - name: stat yasm
   stat: path=/usr/local/bin/yasm
   register: yasm_stat
