@@ -1,11 +1,11 @@
 ---
-- name: yasm | Unarchive
+- name: nasm | Unarchive
   unarchive:
     src: https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.bz2
     dest: "{{ source_dir }}"
     copy: no
 
-- name: Compile | yasm
+- name: Compile | nasm
   become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
