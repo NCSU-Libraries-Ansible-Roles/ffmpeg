@@ -3,13 +3,6 @@
   become: yes
   yum: name=ffmpeg state=absent
 
-# ffmpeg needs >= nasm-2.13
-- name: add nasm repo
-  become: yes
-  template:
-    src: nasm.repo
-    dest: /etc/yum.repos.d/nasm.repo
-
 - name: Install dependencies
   become: yes
   yum: name={{ item }} state=latest
