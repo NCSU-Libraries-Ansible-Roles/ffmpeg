@@ -1,6 +1,6 @@
 ---
 - name: Mercurial | libx265
-  hg: repo=https://bitbucket.org/multicoreware/x265_git
+  git: repo=https://bitbucket.org/multicoreware/x265_git
       dest={{source_dir}}/x265
 
 - name: Compile | libx265
