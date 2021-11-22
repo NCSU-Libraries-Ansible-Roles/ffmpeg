@@ -1,7 +1,7 @@
 ---
 - name: nasm | Unarchive
   unarchive:
-    src: https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.bz2
+    src: https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/nasm-2.15.05.tar.bz2
     dest: "{{ source_dir }}"
     copy: no
 
@@ -9,7 +9,7 @@
   become: yes
   shell: "export PATH=/usr/local/bin/:$PATH && {{ item }}"
   args:
-    chdir: "{{ source_dir }}/nasm-2.14.02"
+    chdir: "{{ source_dir }}/nasm-2.15.05"
     creates: "{{ bin_dir }}/nasm"
   with_items:
     - ./autogen.sh
